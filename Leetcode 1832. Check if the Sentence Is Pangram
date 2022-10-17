@@ -1,0 +1,11 @@
+class Solution {
+public:
+    bool checkIfPangram(string s) {
+        vector<int> ans(26,0); //creating array of size 26
+        for(int i=0;i<s.size();i++)
+            ans[s[i]-'a']++;    //for each character we increment the array with respect to their ascii value
+        for(int i=0;i<26;i++)
+            if(ans[i]==0)return false; //if any of the element in ans is 0 it represents it did not occured hence we return false
+        return true;
+    }
+};
